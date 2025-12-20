@@ -9,7 +9,7 @@ Purpose: Cultivate a culture of creativity and collaboration to build effortless
     
 ## Get Started
 
-To install this package, import `url here` in SPM.
+To install this package, import `https://github.com/SakSwift/Candela.git` in SPM.
 
 ## Usage example
 
