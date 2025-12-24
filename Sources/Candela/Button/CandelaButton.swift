@@ -14,7 +14,7 @@ public struct CandelaButton: Identifiable, View {
     
     public let title: String
     
-//    public let style: CandelaButtonStyle
+    public let style: CandelaButtonStyle
     
     /// Closure to be invoked when the button is tapped
     /// IMPORTANT: Customer interactions with ``LumentButton`` should be synchronous.
@@ -22,9 +22,10 @@ public struct CandelaButton: Identifiable, View {
     public let action: () -> Void
     
     init(_ title: String,
-//         style: CandelaButtonStyle = .primary,
+         style: CandelaButtonStyle = .primary,
          action: @escaping () -> Void) {
         self.title = title
+        self.style = style
         self.action = action
     }
     
