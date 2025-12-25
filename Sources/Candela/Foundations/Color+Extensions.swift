@@ -17,6 +17,15 @@ extension Color {
     }
 }
 
+extension Color {
+    public init(rgbaHex: Int) {
+        self.init(red: CGFloat((rgbaHex >> 24) & 0xFF) / 255.0,
+                  green: CGFloat((rgbaHex >> 16) & 0xFF) / 255.0,
+                  blue: CGFloat((rgbaHex >> 8) & 0xFF) / 255.0,
+                  opacity: CGFloat(rgbaHex & 0xFF) / 255.0)
+    }
+}
+
 extension UIColor {
     convenience init(lightMode lightColor: UIColor, darkMode darkColor: UIColor) {
         self.init { traitCollection in
