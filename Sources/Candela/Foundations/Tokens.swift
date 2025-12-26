@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Tokens.swift
 //  Candela
 //
 //  Created by saket bhushan on 24/12/25.
@@ -23,7 +23,7 @@ public protocol CandelaColorsProviding: Hashable {
     static var secondaryDisabled: Color { get }
 }
 
-enum CandelaColors {
+public enum CandelaColors {
     static let scrim = Color(rgbaHex: 0x4B4B_4B80)
     static let shade00 = Color(rgbaHex: 0xFFFF_FFFF)
     static let shade05 = Color(rgbaHex: 0xF8F6_F1FF)
@@ -79,7 +79,7 @@ public protocol CandelaDimensionsProviding: Hashable {
     // Add more as needed!
 }
 
-enum CandelaDimensions: CandelaDimensionsProviding {
+public enum CandelaDimensions: CandelaDimensionsProviding {
     
     public static let measurement000: CGFloat = 0
     public static let measurement012: CGFloat = 1
@@ -105,15 +105,15 @@ enum CandelaDimensions: CandelaDimensionsProviding {
     public static let measurement1000: CGFloat = 80
     public static let measurement999: CGFloat = 1000
     
-    static let borderRadiusCircle: CGFloat = measurement300
+    public static let borderRadiusCircle: CGFloat = measurement300
     
-    static let borderRadiusRegular: CGFloat = measurement000
+    public static let borderRadiusRegular: CGFloat = measurement000
     
-    static let borderRadiusSmall: CGFloat = measurement100
+    public static let borderRadiusSmall: CGFloat = measurement100
     
-    static let paddingButtonHorizontal: CGFloat = measurement150
+    public static let paddingButtonHorizontal: CGFloat = measurement150
     
-    static let paddingButtonVertical: CGFloat = measurement125
+    public static let paddingButtonVertical: CGFloat = measurement125
     
-    static let paddingTileHorizontal: CGFloat = measurement999
+    public static let paddingTileHorizontal: CGFloat = measurement999
 }

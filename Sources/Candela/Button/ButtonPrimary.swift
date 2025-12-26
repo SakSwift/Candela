@@ -9,9 +9,8 @@ import SwiftUI
 
 struct ButtonPrimary: View {
     
-// TODO:    @Environment(\.theme) private var theme
+    @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
-    
     
     let configuration: ButtonStyleConfiguration
     
@@ -22,6 +21,6 @@ struct ButtonPrimary: View {
     var body: some View {
         configuration
             .label
-// TODO:           .font(style: .body)
+// TODO:    .font(style: .body)
     }
 }
