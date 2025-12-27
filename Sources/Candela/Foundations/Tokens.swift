@@ -13,10 +13,12 @@ public protocol CandelaColorsProviding: Hashable {
     static var surfaceContainer: Color { get }
     static var surfaceDefault: Color { get }
     static var surfaceDisabled: Color { get }
+    static var surfaceStateLayerDisabled: Color { get }
     
     static var primaryContainer: Color { get }
     static var primaryDefault: Color { get }
     static var primaryDisabled: Color { get }
+    static var primaryPressed: Color { get }
     
     static var secondaryContainer: Color { get }
     static var secondaryDefault: Color { get }
@@ -44,9 +46,14 @@ public enum CandelaColors {
     static let skyBlue20 = Color(rgbaHex: 0x8FDE_F6FF)
     static let skyBlue30 = Color(rgbaHex: 0x71D0_F1FF)
     static let skyBlue40 = Color(rgbaHex: 0x5402_E8FF)
+    static let stateLayerLight10 = Color(rgbaHex: 0xFFFF_FFCC)
+    static let stateLayerDark10 = Color(rgbaHex: 0x1E1E_1ECC)
 }
 
 extension CandelaColors: CandelaColorsProviding {
+    
+    public static let surfaceStateLayerDisabled = Color(lightMode: CandelaColors.stateLayerLight10, darkMode: CandelaColors.stateLayerDark10)
+    
     public static let surfaceContainer = Color(lightMode: CandelaColors.shade05, darkMode: CandelaColors.shade100)
     
     public static let surfaceDefault = Color(lightMode: CandelaColors.shade05, darkMode: CandelaColors.shade100)
@@ -61,6 +68,8 @@ extension CandelaColors: CandelaColorsProviding {
     
     public static let secondaryContainer = Color(lightMode: CandelaColors.shade100, darkMode: CandelaColors.shade00)
     
+    public static let primaryPressed = Color(lightMode: CandelaColors.shade65, darkMode: CandelaColors.shade30)
+    
     public static let secondaryDefault = Color(lightMode: CandelaColors.shade00, darkMode: CandelaColors.shade100)
     
     public static let secondaryDisabled = Color(lightMode: CandelaColors.shade30, darkMode: CandelaColors.shade60)
@@ -74,8 +83,9 @@ public protocol CandelaDimensionsProviding: Hashable {
     
     static var paddingButtonHorizontal: CGFloat { get }
     static var paddingButtonVertical: CGFloat { get }
-    
     static var paddingTileHorizontal: CGFloat { get }
+    
+    static var sizingButtonHorizontalMinimum: CGFloat { get }
     // Add more as needed!
 }
 
@@ -103,7 +113,7 @@ public enum CandelaDimensions: CandelaDimensionsProviding {
     public static let measurement800: CGFloat = 64
     public static let measurement900: CGFloat = 72
     public static let measurement1000: CGFloat = 80
-    public static let measurement999: CGFloat = 1000
+    public static let measurement1200: CGFloat = 96
     
     public static let borderRadiusCircle: CGFloat = measurement300
     
@@ -115,5 +125,7 @@ public enum CandelaDimensions: CandelaDimensionsProviding {
     
     public static let paddingButtonVertical: CGFloat = measurement125
     
-    public static let paddingTileHorizontal: CGFloat = measurement999
+    public static let paddingTileHorizontal: CGFloat = measurement300
+    
+    public static let sizingButtonHorizontalMinimum: CGFloat =  measurement1200
 }

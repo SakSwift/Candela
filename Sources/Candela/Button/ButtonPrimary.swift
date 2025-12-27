@@ -22,5 +22,29 @@ struct ButtonPrimary: View {
         configuration
             .label
 // TODO:    .font(style: .body)
+            .padding(.vertical, theme.dimensions.paddingButtonVertical)
+            .padding(.horizontal, theme.dimensions.paddingTileHorizontal)
+            .frame(minWidth: theme.dimensions.sizingButtonHorizontalMinimum,
+                   minHeight: theme.dimensions.measurement500,
+                   alignment: .center)
+            .multilineTextAlignment(.center)
+            .foregroundStyle(textColor(configuration))
+            .background(backgroundColor(configuration))
+            .clipShape(RoundedRectangle(cornerRadius: theme.dimensions.borderRadiusRegular))
+    }
+    
+    private func textColor(_ configuration: ButtonStyleConfiguration) -> Color {
+        switch (isEnabled, configuration.isPressed) {
+        case (false, _): theme.colors.surfaceDefault
+        default: theme.colors.primaryDefault
+        }
+    }
+    
+    private func backgroundColor(_ configuration: ButtonStyleConfiguration) -> Color {
+        switch (isEnabled, configuration.isPressed) {
+        case (false, _): theme.colors.surfaceStateLayerDisabled
+        case (_, true): theme.colors.primaryPressed
+        default: theme.colors.primaryDefault
+        }
     }
 }
