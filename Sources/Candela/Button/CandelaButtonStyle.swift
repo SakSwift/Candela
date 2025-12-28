@@ -14,7 +14,7 @@ public enum CandelaButtonStyle: Equatable, ButtonStyle {
     public func makeBody(configuration: Configuration) -> some View {
         switch self {
         case .primary:
-            EmptyView()
+            ButtonPrimary(configuration)
             
         case .secondary:
             EmptyView()
