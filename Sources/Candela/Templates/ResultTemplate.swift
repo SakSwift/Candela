@@ -29,6 +29,16 @@ public enum ResultTemplateState: CaseIterable, Identifiable {
     
     public var id: Self { self }
     
-// TODO:    var iconImage: Image
-    
+    var icon: String {
+        switch self {
+        case .critical:
+            "alarm.waves.left.and.right"
+        case .success:
+            "alarm.waves.left.and.right"
+        case .warning:
+            "alarm.waves.left.and.right"
+        case .info:
+            "alarm.waves.left.and.right"
+        }
+    }
 }
