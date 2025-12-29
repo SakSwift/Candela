@@ -13,11 +13,11 @@ public struct BulletPointsList: View {
     @Environment(\.theme.dimensions) private var dimensions
     public let bulletItems: [String]
     
-    public init(bulletItems: String...) {
+    public init(_ bulletItems: String...) {
         self.bulletItems = bulletItems
     }
     
-    public init(bulletItems: [String]) {
+    public init(_ bulletItems: [String]) {
         self.bulletItems = bulletItems
     }
     
