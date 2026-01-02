@@ -81,8 +81,23 @@ public struct ResultTemplate<BodyContent: View>: View {
     }
     
     public var body: some View {
-        // TODO: complete this!
-        Text("")
+        ScrollView(showsIndicators: false) {
+            VStack(alignment: .leading, spacing: dimensions.measurement300) {
+                Image(systemName: state.icon)
+                    .resizable()
+                    .aspectRatio(1, contentMode: .fit)
+                    .frame(width: dimensions.measurement800,
+                           height: dimensions.measurement800)
+                
+                PrimaryHeadingContentTemplate(heading: heading,
+                                              bodyContent: { bodyContent },
+                                              buttons: { buttons ?? [] }
+                )
+            }
+            .padding(.top, dimensions.measurement200)
+            .padding(.horizontal, dimensions.measurement200)
+            .frame(maxWidth: .infinity)
+        }
     }
 }
 
@@ -110,4 +125,20 @@ public enum ResultTemplateState: CaseIterable, Identifiable {
             "alarm.waves.left.and.right"
         }
     }
+}
+
+#Preview {
+    
+    VStack {
+        ResultTemplate(state: .critical,
+                       heading: "dummy",
+                       paragraph: "These were small, typically three-foot-tall figures made of hessian (burlap) cloth and stuffed with sand and straw. When dropped from aircraft with small parachutes, they appeared realistic in the night sky.") {
+            [.init("first actions", action: {}),
+             .init("second actions", action: {})
+            ]
+        }
+                       .background(Color.red)
+    }
+    .frame(width: 300, height: 300)
+    
 }
