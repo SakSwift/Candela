@@ -21,7 +21,7 @@ public struct CandelaButton: Identifiable, View {
     /// Any async requirements with ``action`` should be handled by the caller.
     public let action: () -> Void
     
-    init(_ title: String,
+    public init(_ title: String,
          style: CandelaButtonStyle = .primary,
          action: @escaping () -> Void) {
         self.title = title
@@ -33,11 +33,13 @@ public struct CandelaButton: Identifiable, View {
         Button(title) {
             action()
         }
+        .border(.black)
     }
 }
 
 // TODO: Need a Result Builder for List of buttons!
 
 #Preview {
-//    CandelaButton()
+    CandelaButton("some title",
+                  action: {})
 }
