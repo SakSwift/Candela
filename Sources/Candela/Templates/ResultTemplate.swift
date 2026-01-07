@@ -38,11 +38,11 @@ public struct ResultTemplate<BodyContent: View>: View {
         heading: String,
         @ViewBuilder bodyContent: @escaping () -> BodyContent? = { nil },
         buttons: @escaping () -> [CandelaButton]? = { nil }) {
-        self.state = state
-        self.heading = heading
-        self.bodyContent = bodyContent()
-        self.buttons = buttons()
-    }
+            self.state = state
+            self.heading = heading
+            self.bodyContent = bodyContent()
+            self.buttons = buttons()
+        }
     
     /// Convenience init for text paragraph in the body!
     public init(
@@ -50,11 +50,11 @@ public struct ResultTemplate<BodyContent: View>: View {
         heading: String,
         paragraph: String,
         buttons: @escaping () -> [CandelaButton]? = { nil }) where BodyContent == TextParagraphContent {
-        self.state = state
-        self.heading = heading
-        self.bodyContent = TextParagraphContent(paragraph: paragraph)
-        self.buttons = buttons()
-    }
+            self.state = state
+            self.heading = heading
+            self.bodyContent = TextParagraphContent(paragraph: paragraph)
+            self.buttons = buttons()
+        }
     
     /// Convenience init for Bullet points in the body!
     public init(
@@ -62,11 +62,11 @@ public struct ResultTemplate<BodyContent: View>: View {
         heading: String,
         bulletPoints: [String],
         buttons: @escaping () -> [CandelaButton]? = { nil }) where BodyContent == BulletPointsList {
-        self.state = state
-        self.heading = heading
-        self.bodyContent = BulletPointsList(bulletPoints)
-        self.buttons = buttons()
-    }
+            self.state = state
+            self.heading = heading
+            self.bodyContent = BulletPointsList(bulletPoints)
+            self.buttons = buttons()
+        }
     
     /// Convenience init for Bullet points in the body!
     public init(
@@ -74,11 +74,11 @@ public struct ResultTemplate<BodyContent: View>: View {
         heading: String,
         bulletPoints: String...,
         buttons: @escaping () -> [CandelaButton]? = { nil }) where BodyContent == BulletPointsList {
-        self.state = state
-        self.heading = heading
-        self.bodyContent = BulletPointsList(bulletPoints)
-        self.buttons = buttons()
-    }
+            self.state = state
+            self.heading = heading
+            self.bodyContent = BulletPointsList(bulletPoints)
+            self.buttons = buttons()
+        }
     
     public var body: some View {
         ScrollView(showsIndicators: false) {
@@ -137,8 +137,9 @@ public enum ResultTemplateState: CaseIterable, Identifiable {
              .init("second actions", action: {})
             ]
         }
-                       .background(Color.red)
+                       .background(Color.gray)
     }
-    .frame(width: 300, height: 300)
+    .frame(width: .infinity, height: 350)
+    .padding()
     
 }
