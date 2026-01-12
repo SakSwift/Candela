@@ -137,7 +137,7 @@ public enum ResultTemplateState: CaseIterable, Identifiable {
              .init("second actions", action: {})
             ]
         }
-                       .background(Color.gray)
+                       .background(Color.red)
     }
     .frame(width: .infinity, height: 350)
     .padding()

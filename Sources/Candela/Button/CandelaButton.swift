@@ -33,7 +33,7 @@ public struct CandelaButton: Identifiable, View {
         Button(title) {
             action()
         }
-        .border(.black)
+        .buttonStyle(style)
     }
 }
 

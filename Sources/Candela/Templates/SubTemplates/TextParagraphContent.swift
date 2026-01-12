@@ -19,7 +19,7 @@ public struct TextParagraphContent: View {
     
     public var body: some View {
         Text(paragraph)
-// TODO:            .font(style: .body)
+            .font(style: .body)
             .foregroundStyle(colors.surfaceDefault)
             .fixedSize(horizontal: false, vertical: true)
             .frame(maxWidth: .infinity, alignment: .leading)

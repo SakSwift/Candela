@@ -21,7 +21,8 @@ struct ButtonPrimary: View {
     var body: some View {
         configuration
             .label
-// TODO:    .font(style: .body)
+            .font(style: .body)
+            .font(.caption)
             .padding(.vertical, theme.dimensions.paddingButtonVertical)
             .padding(.horizontal, theme.dimensions.paddingTileHorizontal)
             .frame(minWidth: theme.dimensions.sizingButtonHorizontalMinimum,

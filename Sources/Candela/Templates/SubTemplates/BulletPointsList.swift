@@ -46,12 +46,12 @@ public struct BulletPointText: View {
         HStack(alignment: .top) {
             Text(bulletCharacter)
                 .accessibilityHidden(true)
-            //TODO: .font(style: body)
+                .font(style: .body)
                 .foregroundStyle(color.surfaceDefault)
             
             Text(text)
                 .fixedSize(horizontal: false, vertical: true)
-//                .font(style; .body)
+                .font(style: .body)
                 .foregroundStyle(color.surfaceDefault)
         }
     }
